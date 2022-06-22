@@ -1,0 +1,151 @@
+{
+    "nodes": [
+        {
+            "name": "api-2",
+            "meta": {
+                "description": "os7zvjk42h"
+            },
+            "icon": "./images/api.png"
+        },
+        {
+            "name": "lamda-2",
+            "meta": {
+                "description": "arn:aws:lambda:us-east-1:277179997097:function:ListDragons"
+            },
+            "icon": "./images/lamda.png"
+        },
+        {
+            "name": "state-3",
+            "meta": {
+                "description": "arn:aws:apigateway:us-east-1:states:action/StartExecution"
+            },
+            "icon": "./images/state.png"
+        },
+        {
+            "name": "lamda-4",
+            "meta": {
+                "description": "arn:aws:lambda:us-east-1:277179997097:function:AddDragon"
+            },
+            "icon": "./images/lamda.png"
+        },
+        {
+            "name": "iam-4",
+            "meta": {
+                "description": "arn:aws:iam::277179997097:role/dragons-readwrite-lambda-role"
+            },
+            "icon": "./images/iam.png"
+        },
+        {
+            "name": "iam-5",
+            "meta": {
+                "description": "arn:aws:iam::277179997097:role/dragons-read-lambda-role"
+            },
+            "icon": "./images/iam.png"
+        },
+        {
+            "name": "lamda-6",
+            "meta": {
+                "description": "arn:aws:lambda:us-east-1:277179997097:function:ValidateDragon"
+            },
+            "icon": "./images/lamda.png"
+        },
+        {
+            "name": "iam-7",
+            "meta": {
+                "description": "arn:aws:iam::277179997097:role/service-role/StepFunctions-DragonsStateMachine-role-b8064b8a"
+            },
+            "icon": "./images/iam.png"
+        },
+        {
+            "name": "state-8",
+            "meta": {
+                "description": "arn:aws:states:::sns:publish"
+            },
+            "icon": "./images/state.png"
+        },
+        {
+            "name": "s3-95",
+            "meta": {
+                "description": "arn:aws:s3:::ha-dragons-app"
+            },
+            "icon": "./images/s3.png"
+        },
+        {
+            "name": "ssm-96",
+            "meta": {
+                "description": "arn:aws:ssm:us-east-1:277179997097:parameter/drago"
+            },
+            "icon": "./images/ssm.png"
+        }
+    ],
+    "links": [
+        {
+            "source": "api-2",
+            "target": "lamda-2"
+        },
+        {
+            "source": "api-2",
+            "target": "state-3"
+        },
+        {
+            "source": "lamda-4",
+            "target": "iam-4"
+        },
+        {
+            "source": "lamda-2",
+            "target": "iam-5"
+        },
+        {
+            "source": "lamda-6",
+            "target": "iam-5"
+        },
+        {
+            "source": "iam-7",
+            "target": "lamda-6"
+        },
+        {
+            "source": "iam-7",
+            "target": "state-8"
+        },
+        {
+            "source": "iam-7",
+            "target": "lamda-4"
+        },
+        {
+            "source": "iam-7",
+            "target": "state-8"
+        },
+        {
+            "source": "iam-5",
+            "target": "s3-95"
+        },
+        {
+            "source": "iam-5",
+            "target": "ssm-96"
+        },
+        {
+            "source": "iam-4",
+            "target": "s3-95"
+        },
+        {
+            "source": "iam-4",
+            "target": "ssm-96"
+        },
+        {
+            "source": "iam-7",
+            "target": "lamda-4"
+        },
+        {
+            "source": "iam-7",
+            "target": "lamda-6"
+        },
+        {
+            "source": "iam-7",
+            "target": "lamda-4"
+        },
+        {
+            "source": "iam-7",
+            "target": "lamda-6"
+        }
+    ]
+}
