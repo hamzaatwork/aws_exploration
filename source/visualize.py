@@ -4,8 +4,6 @@ data = []
 with open('discovery_reports.json', 'r') as f:
     data = json.load(f)
 
-cytoscape_visualible_data = {}
-
 visualizable_data = {}
 nodes = []
 links = []
