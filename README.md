@@ -21,3 +21,4 @@ python -m http.server
 ## Usage
 - Run **main.py** to collect data, data is stored in *discovery_reports.json*
 - After collection, run **visualize.py** to make mapping data which is stored in *visualizable_data.json*
+- Run inet-henge visualization server and view mapping on localhost:8000
