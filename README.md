@@ -1,5 +1,6 @@
 # aws_exploration
 
+## Set up
 Please run following command to instal dependencies
 ```
 pip install -r requirements.txt
@@ -16,3 +17,7 @@ Run inet-henge server using:
 ```
 python -m http.server
 ```
+
+## Usage
+- Run **main.py** to collect data, data is stored in *discovery_reports.json*
+- After collection, run **visualize.py** to make mapping data which is stored in *visualizable_data.json*
