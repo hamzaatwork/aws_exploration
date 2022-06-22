@@ -8,10 +8,20 @@ with open('discovery_reports.json', 'r') as f:
 visualizable_data = {}
 nodes = []
 links = []
-counter = 1
+counter = 0
 
 already_included_arns_list = []
 already_included_arns_names_list = {}
+
+external_node_name = 'external-1'
+external_node_attached = False
+nodes.append({
+            'name' : 'external-1',
+            'meta' : {
+                'description' : 'connection outside of the network'
+            },
+            'icon': './images/ix.png'
+        })
 
 for data in data[0]['Mapping']:
     counter += 1
@@ -121,6 +131,16 @@ for data in data[0]['Mapping']:
             },
             'icon': target_icon
         })
+
+
+    #connecting external node with first node(api)
+    if external_node_attached == False:
+        external_node_attached = True
+        links.append({
+            'source' : external_node_name,
+            'target' : source_name
+        })
+
     links.append({
         'source' : source_name,
         'target' : target_name
