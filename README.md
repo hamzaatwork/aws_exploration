@@ -1,12 +1,12 @@
 # aws_exploration
 
 ## Set up
-Please run following command to instal dependencies
+Please run following command to install dependencies
 ```
 pip install -r requirements.txt
 ```
 
-Link to visualization: [inet-henge] (https://github.com/codeout/inet-henge)
+Link to visualization: [inet-henge](https://github.com/codeout/inet-henge)
 
 Instal inet-henge using npm command
 ```
