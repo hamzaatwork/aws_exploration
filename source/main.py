@@ -2,7 +2,7 @@ import boto3
 import json
 import pprint
 
-from modules import explore_api as APIS, explore_api as API, explore_lambda as LAMBDA, explore_state as STATE, explore_iam as IAM
+from modules import explore_apis as APIS, explore_api as API, explore_lambda as LAMBDA, explore_state as STATE, explore_iam as IAM
 
 print('Server : ', 'Starting...')
 
