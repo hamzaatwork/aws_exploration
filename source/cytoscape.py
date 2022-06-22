@@ -25,5 +25,5 @@ for link in data['links']:
 nodes = pd.DataFrame(nodes_data)
 edges = pd.DataFrame(edges_data)
 
-p4c.create_network_from_data_frames(nodes, edges, title="my first network", collection="DataFrame Example")
-p4c.cybrowser_show()
+p4c.set_visual_style('Marquee')
+p4c.create_network_from_data_frames(nodes, edges, title="aws network interaction")
