@@ -157,7 +157,7 @@ visualizable_data = {
     'links' : links
 }
 
-with open('node_modules/inet-henge/example/visualizable_data.json', 'w') as f:
+with open('visualizable_data.json', 'w') as f:
     f.write(json.dumps(visualizable_data, indent=4, default=str))
 
 # python -m http.server
