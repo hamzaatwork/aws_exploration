@@ -22,3 +22,4 @@ python -m http.server
 - Run **main.py** to collect data, data is stored in *discovery_reports.json*
 - After collection, run **visualize.py** to make mapping data which is stored in *visualizable_data.json*
 - Run inet-henge visualization server and view mapping on localhost:8000
+- Run **cytoscape.py** to convert *visualizable_data.json* into cytoscape consumable form(dataframes), keep cytoscape open and **running in the background** for successful execution
