@@ -1,4 +1,5 @@
 import json
+from pprint import pprint
 
 data = []
 with open('discovery_reports.json', 'r') as f:
@@ -11,6 +12,8 @@ counter = 0
 
 already_included_arns_list = []
 already_included_arns_names_list = {}
+
+unique_links_list = []
 
 external_node_name = 'external-1'
 external_node_attached = False
@@ -140,10 +143,15 @@ for data in data[0]['Mapping']:
             'target' : source_name
         })
 
-    links.append({
-        'source' : source_name,
-        'target' : target_name
-    })
+    #keeping track of unique links and ignoring addition of duplicate links
+    if (source_name,target_name) in unique_links_list:
+        pass
+    else:
+        unique_links_list.append((source_name,target_name))
+        links.append({
+            'source' : source_name,
+            'target' : target_name
+        })
 
 
     already_included_arns_list.append(source_arn)
@@ -151,6 +159,7 @@ for data in data[0]['Mapping']:
     already_included_arns_names_list[source_arn] = source_name
     already_included_arns_names_list[target_arn] = target_name
 
+# links = {frozenset(item.items()) : item for item in links}.values()
 visualizable_data = {
     'nodes' : nodes,
     'links' : links

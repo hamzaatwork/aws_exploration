@@ -123,10 +123,6 @@
             "target": "lamda-3"
         },
         {
-            "source": "iam-6",
-            "target": "state-7"
-        },
-        {
             "source": "iam-4",
             "target": "s3-94"
         },
@@ -141,22 +137,6 @@
         {
             "source": "iam-3",
             "target": "ssm-95"
-        },
-        {
-            "source": "iam-6",
-            "target": "lamda-3"
-        },
-        {
-            "source": "iam-6",
-            "target": "lamda-5"
-        },
-        {
-            "source": "iam-6",
-            "target": "lamda-3"
-        },
-        {
-            "source": "iam-6",
-            "target": "lamda-5"
         }
     ]
 }
