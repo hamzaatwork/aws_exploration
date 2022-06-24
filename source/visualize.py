@@ -1,10 +1,9 @@
 import json
+from pprint import pprint
 
 data = []
 with open('discovery_reports.json', 'r') as f:
     data = json.load(f)
-
-cytoscape_visualible_data = {}
 
 visualizable_data = {}
 nodes = []
@@ -13,6 +12,8 @@ counter = 0
 
 already_included_arns_list = []
 already_included_arns_names_list = {}
+
+unique_links_list = []
 
 external_node_name = 'external-1'
 external_node_attached = False
@@ -142,10 +143,15 @@ for data in data[0]['Mapping']:
             'target' : source_name
         })
 
-    links.append({
-        'source' : source_name,
-        'target' : target_name
-    })
+    #keeping track of unique links and ignoring addition of duplicate links
+    if (source_name,target_name) in unique_links_list:
+        pass
+    else:
+        unique_links_list.append((source_name,target_name))
+        links.append({
+            'source' : source_name,
+            'target' : target_name
+        })
 
 
     already_included_arns_list.append(source_arn)
